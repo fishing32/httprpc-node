@@ -77,28 +77,28 @@ client.postXXX('param1', {/*post body*/}).options({
 
 # loadmap
 - server
- - [] 插件机制
- - [] 插件: 频率控制
- - [] 插件: 链路追踪 opentelemetry
- - [] 插件: 监控 prometheus
- - [] 插件：缓存控制 cache-control
- - [] 插件；protobuf
+ - [ ] 插件机制
+ - [ ] 插件: 频率控制
+ - [ ] 插件: 链路追踪 opentelemetry
+ - [ ] 插件: 监控 prometheus
+ - [ ] 插件：缓存控制 cache-control
+ - [ ] 插件；protobuf
 
 - client
- - [] 插件机制
- - [] 支持http cache-control
- - [] 支持http keep-alive
- - [] 插件：DNS解析
- - [] 插件：连接池与负载均衡
- - [] 插件: 频率控制
- - [] 插件: 链路追踪 opentelemetry
- - [] 插件: 监控 prometheus
- - [] 插件；protobuf
+ - [ ] 插件机制
+ - [ ] 支持http cache-control
+ - [ ] 支持http keep-alive
+ - [ ] 插件：DNS解析
+ - [ ] 插件：连接池与负载均衡
+ - [ ] 插件: 频率控制
+ - [ ] 插件: 链路追踪 opentelemetry
+ - [ ] 插件: 监控 prometheus
+ - [ ] 插件；protobuf
 
 - cli
- - [] 生成server脚手架
- - [] 生成client openapi SDK
- - [] 生成server openapi 路由
+ - [ ] 生成server脚手架
+ - [ ] 生成client openapi SDK
+ - [ ] 生成server openapi 路由
 
 
 # 共建
