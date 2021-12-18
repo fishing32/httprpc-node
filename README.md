@@ -1,11 +1,11 @@
 # httprpc-node
 An extremely simple  rpc framework based on http/http2. Support both node and browser.
 
-English 简体中文[README_CN.md]
+English [简体中文](README_CN.md)
 
 # why
 Http exists everywhere，Most third-party services are published via https. With the advent of http2.0 and 3.0, http is becoming more mature and secure.
-As the name implies, httprpc is an rpc framework based on the http protocol. You can use it as simple as `request` or `axios`:
+As the name implies, httprpc is an rpc framework based on the http protocol. You can use it as simple as [request](https://github.com/request/request) or [axios](https://github.com/axios/axios):
 ```
 const { Client } = require('httprpc');
 const client = new Client();
@@ -21,7 +21,7 @@ As an RPC framework, it must of course support various microservice management p
 
 Based on the http protocol, you can completely control the http transport layer through options and plug-ins, such as content-type, cache-control, keep-alive, etc
 
-Also, httprpc supports the openapi ecology. With the openapi definition, you can generate the SDK and server framework through the cli tool. openapi can be used for document generation, parameter veridation, automated testing, etc. For more infomation:
+Also, httprpc supports the openapi ecology. With the openapi definition, you can generate the SDK and server framework through the cli tool. openapi can be used for document generation, parameter veridation, automated testing, etc. For more infomation:[https://swagger.io/][1]
 
 # 与gRPC的区别
 简单说就是简便、自由、兼容
