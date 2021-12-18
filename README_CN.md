@@ -1,9 +1,10 @@
 # httprpc-node
 基于http协议的简单RPC框架，支持与第三方http服务互访，支持浏览器、node、go、java环境.
-[English](README.md)
+
+简体中文 [English](README.md)
 
 # 为什么使用httprpc
-http是无处不在的，我们给客户端提供的API或在使用很多第三方服务时用的都是http协议。 http协议经过多年的发展已经推出了2.0，3.0标准也将发布。
+http协议是使用最广泛的应用间传输协议，随着2.0/3.0的发布，正变得越来越成熟和安全。尽管市面上有很多RPC协议，但远远比不上http.
 顾名思义，httprpc是基于http协议的rpc框架，你可以像使用[request](https://github.com/request/request)或[axios](https://github.com/axios/axios)一样简单地使用它：
 ```
 const { client } = require('httprpc');
@@ -16,7 +17,7 @@ const resp = await rpc.request({
   }
 })
 ```
-当然作为一个RPC框架，当然要支持各种微服务治理插件，比如名字服务插件、负载均衡、频控、日志、监控、链路追踪等等。 httprpc通过插件机制统一引入这些工具，甚至连http传输协议都能用插件替换。简单启用httprpc对应的默认的插件既可无缝对接当下最流行的服务治理工具。
+作为一个RPC框架，当然要支持各种微服务治理插件，比如名字服务插件、负载均衡、频控、日志、监控、链路追踪等等。 httprpc通过插件机制统一引入这些工具，甚至连http传输协议都能用插件替换。简单启用httprpc对应的插件既可无缝对接当下最流行的服务治理工具。
 同时基于http协议使得你能通过选项和插件完整地控制http传输层，例如content-type, cache-control, keep-alive等，只要简单地启用对应地插件支持即可。httprpc可以自建
 
 还有更多，httprpc支持openapi生态，您可以在定义好openapi描述后，直接通过cli工具生成sdk和server框架。openapi可以用于文档生成、参数校验、自动化测试等，具体参考：[https://swagger.io]
