@@ -21,27 +21,27 @@ As an RPC framework, it must of course support various microservice management p
 
 Based on the http protocol, you can completely control the http transport layer through options and plug-ins, such as content-type, cache-control, keep-alive, etc
 
-Also, httprpc supports the openapi ecology. With the openapi definition, you can generate the SDK and server framework through the cli tool. openapi can be used for document generation, parameter veridation, automated testing, etc. For more infomation:[https://swagger.io/][1]
+Also, httprpc supports the openapi ecology. With the openapi definition, you can generate the SDK and server framework through the cli tool. openapi can be used for document generation, parameter veridation, automated testing, etc. For more infomation:[https://swagger.io]
 
-# 与gRPC的区别
-简单说就是简便、自由、兼容
-- 不限制传输内容格式，httprpc默认使用json传递数据包体，您也可以通过插件使用xml、protobuf或者其它格式。
-- 可以替换传输协议，可以选择http或https/2. 或者通过插件自己写传输协议。
-- 可以直接对接第三方http服务端，也可以令第三方直接通过https服务访问。
-- 不强制接口描述方案，openapi是httprpc推荐的方案，有大量会对性优化，当然您使用protobuf或者没有描述文件也是可以的，http嘛。
+# Difference with gRPC
+Easier, more free and more compatible.
+- No restriction on the transmission content type, httprpc uses json to transmit the data packet body by default, and you can also use xml, protobuf or other formats through plugins。
+- The transmission protocol can be replaced, you can choose http or https/2. Or you can customize the transmission protocol through plugins。
+- No need to use server and client at the same time. It can be directly connected to a third-party http server, or a third party can be directly accessed through the https service.
+- The interface definition scheme is not mandatory. Openapi is the scheme recommended by httprpc. howerver, you can use protobuf or no definition scheme, it is http.
 
-# 性能
-  不附加插件情况下取决于对应语言的http/s组件性能，node直接用原生http模块，服务端与koa/express相当。
+# Performance
+  It depends on the performance of the http/s component of the programming language. directly uses the native http/2 module in nodejs,  the performance is equivalent to koa/express.
 
-# 用法
-- 服务端
+# Usage
+- server
 ```
 const { Server } = require('httprpc');
 const server = new Server();
 server.listen(port, ip);
 
 ```
-- 使用插件
+- client with plugins
 ```
 const { Client } = require('httprpc');
 const client = new Client(
@@ -53,14 +53,14 @@ const client = new Client(
   },
 );
 ```
-- 对单个请求独立设置插件选项
+- request with options
 ```
  const resp = await client.request({ url: 'https://fishing32.com/test'}, {
     'cache-controll': 'no-store',
  })
 ```
 
-- openapi sdk
+- engaging with openapi
 ```
 const { Client, openapiSDK, Server, openapiServer } = require('httprpc');
 const server = nw Server(openapiServer('./openapi.yaml'));
