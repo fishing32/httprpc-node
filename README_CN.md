@@ -20,17 +20,27 @@ const resp = await rpc.request({
 
 还有更多，httprpc支持openapi生态，您可以在定义好openapi描述后，直接通过cli工具生成sdk和server框架。openapi可以用于文档生成、参数校验、自动化测试等，具体参考：
 
-#与gRPC的区别
+# 与gRPC的区别
 简单说就是简便、自由、兼容
 - 不限制传输内容格式，httprpc默认使用json传递数据包体，您也可以通过插件使用xml、protobuf或者其它格式。
 - 可以替换传输协议，可以选择http或https/2. 或者通过插件自己写传输协议。
 - 可以直接对接第三方http服务端，也可以令第三方直接通过https服务访问。
 - 不强制接口描述方案，openapi是httprpc推荐的方案，有大量会对性优化，当然您使用protobuf或者没有描述文件也是可以的，http嘛。
 
+# 性能
+  不附加插件情况下取决于对应语言的http/s组件性能，node直接用原生http模块，服务端与koa/express相当。
+
 # 用法
+- 服务端
+```
+const { Server } = require('httprpc');
+const server = new Server();
+server.listen(port, ip);
+
+```
 - 使用插件
 ```
-const { client } = require('httprpc');
+const { Client } = require('httprpc');
 const client = new Client(
   async plugin1(ctx) => {
     ...
@@ -46,3 +56,20 @@ const client = new Client(
     'cache-controll': 'no-store',
  })
 ```
+
+- openapi sdk
+```
+const { Client, openapiSDK, Server, openapiServer } = require('httprpc');
+const server = nw Server(openapiServer('./openapi.yaml'));
+server.listen(80);
+const client = new Client(openapiSDK('./openapi.yaml'));
+client.getXXX('param1');
+
+client.getXXX('param1').options({ 
+  'cache-controll': 'no-store',
+});
+client.postXXX('param1', {/*post body*/}).options({ 
+  'cache-controll': 'no-store',
+});
+```
+
