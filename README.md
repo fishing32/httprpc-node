@@ -1,5 +1,5 @@
 # httprpc-node
-An extremely simple  rpc framework based on http/http2. Support both node and browser.
+An extremely simple  rpc framework based on http/http2. Support browser, node, go and java.
 
 English [简体中文](README_CN.md)
 
