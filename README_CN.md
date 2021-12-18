@@ -96,9 +96,9 @@ client.postXXX('param1', {/*post body*/}).options({
 [ ] 插件；protobuf
 
 - cli
-[ ] 生成server脚手架
-[ ] 生成client openapi SDK
-[ ] 生成server openapi 路由
+ - [x] 生成server脚手架
+ - [x] 生成client openapi SDK
+ - [x] 生成server openapi 路由
 
 
 # 共建
