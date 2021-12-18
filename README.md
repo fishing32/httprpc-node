@@ -1,14 +1,13 @@
 # httprpc-node
 An extremely simple  rpc framework based on http/http2. Support both node and browser.
-基于http的极度简便的RPC框架，可以运行在node和浏览器环境中。
 
-English 简体中文
+English 简体中文[README_CN.md]
 
 # why
-http是无处不在的，我们给客户端提供的API或在使用很多第三方服务时用的都是http协议。 http协议经过多年的发展已经推出了2.0，3.0标准也将发布。
-顾名思义，httprpc是基于http协议的rpc框架，你可以像使用request或axios一样简单地使用它：
+Http exists everywhere，Most third-party services are published via https. With the advent of http2.0 and 3.0, http is becoming more mature and secure.
+As the name implies, httprpc is an rpc framework based on the http protocol. You can use it as simple as `request` or `axios`:
 ```
-const { client } = require('httprpc');
+const { Client } = require('httprpc');
 const client = new Client();
 const resp = await rpc.request({
   method: 'POST',
@@ -18,10 +17,11 @@ const resp = await rpc.request({
   }
 })
 ```
-当然作为一个RPC框架，当然要支持各种微服务治理插件，比如名字服务插件、负载均衡、频控、日志、监控、链路追踪等等。 httprpc通过插件机制统一引入这些工具，甚至连http传输协议都能用插件替换。简单启用httprpc对应的默认的插件既可无缝对接当下最流行的服务治理工具。
-同时基于http协议使得你能通过选项和插件完整地控制http传输层，例如content-type, cache-control, keep-alive等，只要简单地启用对应地插件支持即可。httprpc可以自建
+As an RPC framework, it must of course support various microservice management plug-ins, such as name service, load balancing, frequency control, logging, monitoring, link tracking and so on. httprpc engaging with these tools through the plug-in mechanism, Simply enable the default plugin provided by httprpc to connect with the most popular service management tools.
 
-还有更多，httprpc支持openapi生态，您可以在定义好openapi描述后，直接通过cli工具生成sdk和server框架。openapi可以用于文档生成、参数校验、自动化测试等，具体参考：
+Based on the http protocol, you can completely control the http transport layer through options and plug-ins, such as content-type, cache-control, keep-alive, etc
+
+Also, httprpc supports the openapi ecology. With the openapi definition, you can generate the SDK and server framework through the cli tool. openapi can be used for document generation, parameter veridation, automated testing, etc. For more infomation:
 
 # 与gRPC的区别
 简单说就是简便、自由、兼容
