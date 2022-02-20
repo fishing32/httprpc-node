@@ -4,7 +4,7 @@
 简体中文 [English](README.md)
 
 # 为什么使用httprpc
-http协议是使用最广泛的应用间传输协议，随着2.0/3.0的发布，正变得越来越成熟和安全。尽管市面上有很多RPC协议，但远远比不上http.
+http协议是使用最广泛的应用间传输协议，随着2.0/3.0的发布，正变得越来越成熟和安全。尽管市面上有很多RPC协议，但普及程度远远比不上http.
 顾名思义，httprpc是基于http协议的rpc框架，你可以像使用[request](https://github.com/request/request)或[axios](https://github.com/axios/axios)一样简单地使用它：
 ```
 const { client } = require('httprpc');

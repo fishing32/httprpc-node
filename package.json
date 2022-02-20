@@ -1,0 +1,38 @@
+{
+  "name": "httprpc-node",
+  "version": "1.0.0",
+  "description": "httprpc",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fishing32/httprpc-node.git"
+  },
+  "keywords": [
+    "http",
+    "rpc"
+  ],
+  "author": "fishing32",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fishing32/httprpc-node/issues"
+  },
+  "homepage": "https://github.com/fishing32/httprpc-node#readme",
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jest": "^26.1.1",
+    "jest": "^27.5.1"
+  },
+  "dependencies": {
+    "axios": "^0.26.0",
+    "koa": "^2.13.4",
+    "koa-compose": "^4.1.0",
+    "lodash": "^4.17.21",
+    "lru-cache": "^7.3.1",
+    "pino": "^7.8.0"
+  }
+}
