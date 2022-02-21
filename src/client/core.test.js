@@ -1,5 +1,5 @@
 const logger = require('pino')();
-const createClient = require('./client');
+const createClient = require('./core');
 
 test('2 middleware', () => {
   const request = createClient(

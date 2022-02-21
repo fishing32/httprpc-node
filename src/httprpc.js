@@ -1,7 +1,7 @@
-const client = require('./client');
-const server = require('./server');
+const createClient = require('./client/core');
+const createServer = require('./server/core');
 
 module.exports = {
-  client,
-  server,
+  createClient,
+  createServer,
 };
